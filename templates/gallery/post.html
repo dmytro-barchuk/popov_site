@@ -1,0 +1,29 @@
+{% extends 'gallery/main.html' %}
+{% load static %}
+{% block content %}
+
+
+
+
+	<h1>{{post.title}}</h1>
+	<br>	
+	{% if post.image%}
+		<div align="center">
+			<img src="{{post.image.url}}" alt="...">
+		</div>
+	{% else %}
+		<img src="" class="card-img-top" alt="...no image...">
+	{% endif %}
+	
+	<!-- Нужно придумать как скрывать текст -->
+	<br>
+	{% if post.body %}
+	<h2>Опис:</h2>
+	<div class="plain-text">
+		<p>{{post.body|linebreaks}}</p>
+	</div>
+	{% else %}
+	<h2>Опис відсутній. Просто насолоджуйтесь картинкою </h2>
+	{% endif %}
+
+{% endblock content %}

@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-nav sticky-top nav-font">
+  <div class="container-fluid">
+    <a class="navbar-brand navbar-text text-warning" href="{% url 'home' %}" title="На головну">Євген Попов</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navbar-text" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <!-- <a class="nav-link" aria-current="page" href="{% url 'home' %}">На головну</a> -->
+        <li class="nav-item">
+          <a class="nav-link text-warning" href="{% url 'posts' %}">Галерея</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-warning" href="{% url 'about' %}">Про мене</a>
+        </li>
+
+        <li class="nav-item text-warning">
+          <a class="nav-link text-warning" href="{% url 'mail' %}" tabindex="-1">Написати мені</a>
+        </li>
+      </ul>
+
+<!-- Проверка авторизации пользователей!!! -->
+      <div class="d-flex">
+        {% if request.user.is_authenticated %}
+        <div class="navbar-nav ">
+          <a class="nav-link text-warning" href="#">Вітаємо, <strong>{{user}}</strong>!</a>
+          <a class="nav-link text-warning" href="{% url 'create_post' %}">+ Новий пост</a>        
+        </div>
+        {% else %}
+        <div class="navbar-nav ">
+          <a class="nav-link text-warning" href="#">Вітаємо на сайті! </a>
+          <a class="nav-link text-warning" href="#">Зареєструватись</a>
+        </div>
+        {% endif %}
+<!-- Проверка авторизации пользователей!!! -->
+
+      </div>
+    </div>
+  </div>
+</nav>

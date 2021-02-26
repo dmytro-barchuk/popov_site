@@ -1,0 +1,41 @@
+{% extends 'gallery/main.html' %}
+{% load static %}
+{% block content %}
+
+
+<style type="text/css">
+	.button1{
+		width: 250px;
+	}
+</style>
+
+<form id="contact-form" method="POST" action="{% url 'sendMail' %}" enctype="multipart/form-data">
+{% csrf_token %}
+	
+	<div class="mb-3 pad">
+		<label for="name" class="form-label">Name</label>
+		<input type="text" class="form-control" aria-describedby="name" name="name">
+	</div>
+
+	<div class="mb-3 pad">
+		<label for="subject" class="form-label">Subject</label>
+		<input type="text" class="form-control" name="subject" aria-describedby="subject">
+	</div>
+
+	<div class="mb-3 pad">
+		<label for="from_email" class="form-label">Email address</label>
+		<input type="email" class="form-control" aria-describedby="emailHelp" name="from_email">
+	</div>
+
+	<div class="mb-3 pad">
+		<label for="message" class="form-label">Message</label>
+		<textarea class="form-control" rows="3" name="message"></textarea>
+	</div>
+
+	<div class="mb-3 pad">
+		<button type="submit" class="btn btn-primary button1">Submit</button>
+	</div>
+</form>
+
+
+{% endblock content %}

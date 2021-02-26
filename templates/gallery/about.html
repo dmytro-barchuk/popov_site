@@ -1,0 +1,20 @@
+{% extends 'gallery/main.html' %}
+{% load static %}
+{% block content %}
+
+<h2>Хто я і що я тут роблю?</h2>
+
+<div align="center">
+	<img src="{% static '/about/about.jpg'%}" alt="..." class="rounded-circle" width="300">
+</div>
+<br>
+
+<div class="plain-text">
+	{% for line in file_contents %}
+		<p>{{line}}</p>
+
+	{% endfor %}
+</div>
+
+
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'gallery/main.html' %}
+{% load static %}
+{% block content %}
+
+<style type="text/css">
+html, body {
+		height: 100%;
+	}
+
+h2, a {
+	text-transform: uppercase;
+}
+
+p {
+	font-size: 150%;
+}
+
+#wrapper {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;	
+}
+</style>
+
+
+<div id="wrapper">
+	<div>
+		<h2 align="center" >Повідомлення успішно відправлено</h2>
+		<h3 align="center" >Намагатимусь надати відповідь якнайшвидше</h3>
+		<p>Тепер ви можете:</p>
+		<p><a class="btn btn-dark" href="{% url 'home'%}">Повернутись на головну сторінку</a></p>
+	</div>
+</div>
+
+
+{% endblock content %}
