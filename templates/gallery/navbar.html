@@ -24,7 +24,7 @@
       <div class="d-flex">
         {% if request.user.is_authenticated %}
         <div class="navbar-nav ">
-          <a class="nav-link text-warning" href="{% url 'admin' %}">Вітаємо, <strong>{{user}}</strong>!</a>
+          <a class="nav-link text-warning" href="{% url 'admin' %}">Вітаємо на сайті, <strong>{{user}}</strong>!</a>
           <a class="nav-link text-warning" href="{% url 'create_post' %}">+ Новий пост</a>        
         </div>
         {% else %}
